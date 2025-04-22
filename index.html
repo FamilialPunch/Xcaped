@@ -308,39 +308,39 @@
       }
 
       @media (max-width: 640px) {
-  /* Narrow the modal and reduce padding */
-  .timeup-overlay .modal {
-    width: 90%;
-    padding: 1rem;
-  }
+      /* Narrow the modal and reduce padding */
+      .timeup-overlay .modal {
+        width: 90%;
+        padding: 1rem;
+      }
 
-  /* Smaller heading and text */
-  .timeup-overlay .modal h1 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
-  .timeup-overlay .modal p {
-    font-size: 1rem;
-  }
+      /* Smaller heading and text */
+      .timeup-overlay .modal h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+      }
+      .timeup-overlay .modal p {
+        font-size: 1rem;
+      }
 
-  /* Stack buttons vertically and full‑width */
-    .timeup-overlay .actions {
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .timeup-overlay .btn-secondary,
-    .timeup-overlay .btn-primary {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 0.95rem;
-    }
-  
-    /* Ensure the overlay covers fully */
-    .timeup-overlay {
-      padding: 0 1rem;
-    }
-  }
+      /* Stack buttons vertically and full‑width */
+        .timeup-overlay .actions {
+          flex-direction: column;
+          gap: 0.75rem;
+          margin-top: 1rem;
+        }
+        .timeup-overlay .btn-secondary,
+        .timeup-overlay .btn-primary {
+          width: 100%;
+          padding: 0.8rem;
+          font-size: 0.95rem;
+        }
+      
+        /* Ensure the overlay covers fully */
+        .timeup-overlay {
+          padding: 0 1rem;
+        }
+      }
 
       /* Escape Rooms Section*/
 
@@ -947,24 +947,34 @@
     }
 
     @media (max-width: 640px) {
-      /* Stack the cards vertically and remove horizontal scroll */
+      /* Make sure the wrapper doesn’t clip the cards */
+      .carousel-wrapper {
+        overflow: visible;
+        padding: 0;           /* remove any extra side‑padding */
+      }
+    
+      /* Stack reviews vertically */
       .review-container {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding: 1.5rem 0;   /* keep your top/bottom glow space */
-        overflow: visible;   /* show full height */
-        scroll-snap-type: none; 
+        padding: 1.5rem 0;    /* keep your glow space top/bottom */
+        overflow: visible;    /* show full height */
+        scroll-snap-type: none;
       }
+    
       /* Let each card fill the width */
       .review-card {
         flex: none !important;
         width: 100% !important;
         max-width: 100% !important;
+        margin: 0 auto;       /* center if there’s extra space */
         scroll-snap-align: none;
       }
-      /* Hide the carousel arrows if you like */
-      .carousel-btn {
+    
+      /* Hide arrows & dots */
+      .carousel-btn,
+      .carousel-dots {
         display: none;
       }
     }
