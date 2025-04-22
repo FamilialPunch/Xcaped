@@ -323,15 +323,18 @@
         font-size: 1rem;
       }
 
-      .btn-secondary + .btn-primary {
-        flex-direction: column;
+      .timeup-overlay .btn-primary {
+        width: auto;            /* undo full‑width if you don’t want it */
+        margin: 0 auto;         /* centers it within the flex container */
+        min-width: 200px;       /* optional: ensure a comfy tap area */
       }
 
       /* Stack buttons vertically and full‑width */
         .timeup-overlay .actions {
+          display: flex;
           flex-direction: column;
+          align-items: center;    /* ← centers child buttons */
           gap: 0.75rem;
-          margin-top: 1rem;
         }
         .timeup-overlay .btn-secondary,
         .timeup-overlay .btn-primary {
@@ -1594,7 +1597,7 @@
           overlay.className = 'timeup-overlay';
           overlay.innerHTML = `
             <div class="modal dramatic-enter">
-              <h1 class="flicker">⏰ Time’s Up — You’re Out of Time</h1>
+              <h1 class="flicker">⏰ Time’s Up!</h1>
               <p>The clock has beaten you… but the adventure’s not over.</p>
               <div class="actions">
                 <button id="keep-exploring" class="btn-secondary">Keep Exploring</button>
