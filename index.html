@@ -307,6 +307,41 @@
         100% { opacity: 1; filter: blur(0); transform: translateY(0); }
       }
 
+      @media (max-width: 640px) {
+  /* Narrow the modal and reduce padding */
+  .timeup-overlay .modal {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  /* Smaller heading and text */
+  .timeup-overlay .modal h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .timeup-overlay .modal p {
+    font-size: 1rem;
+  }
+
+  /* Stack buttons vertically and full‑width */
+    .timeup-overlay .actions {
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .timeup-overlay .btn-secondary,
+    .timeup-overlay .btn-primary {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 0.95rem;
+    }
+  
+    /* Ensure the overlay covers fully */
+    .timeup-overlay {
+      padding: 0 1rem;
+    }
+  }
+
       /* Escape Rooms Section*/
 
       .rooms {
@@ -911,6 +946,29 @@
       background: var(--red);
     }
 
+    @media (max-width: 640px) {
+      /* Stack the cards vertically and remove horizontal scroll */
+      .review-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 0;   /* keep your top/bottom glow space */
+        overflow: visible;   /* show full height */
+        scroll-snap-type: none; 
+      }
+      /* Let each card fill the width */
+      .review-card {
+        flex: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: none;
+      }
+      /* Hide the carousel arrows if you like */
+      .carousel-btn {
+        display: none;
+      }
+    }
+
     /* ───── Footer Styles ───── */
 
     .site-footer{
@@ -1066,7 +1124,7 @@
       
         <!-- ⏱ sticky timer bar -->
         <div class="sticky-timer">
-          <span id="sticky-time">Time Left: 00:03:00</span>
+          <span id="sticky-time">Time Left: 03:00</span>
         </div>
       </nav>      
 
@@ -1487,7 +1545,7 @@
         function updateDisplays() {
           const mm  = String(Math.floor(remaining / 60)).padStart(2, '0');
           const ss  = String(remaining % 60).padStart(2, '0');
-          const txt = `Time Left: 00:${mm}:${ss}`;
+          const txt = `Time Left: ${mm}:${ss}`;
           heroTime.textContent   = txt;
           stickyTime.textContent = txt;
         }
