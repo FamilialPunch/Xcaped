@@ -323,6 +323,10 @@
         font-size: 1rem;
       }
 
+      .btn-secondary + .btn-primary {
+        flex-direction: column;
+      }
+
       /* Stack buttons vertically and full‑width */
         .timeup-overlay .actions {
           flex-direction: column;
@@ -977,6 +981,10 @@
       .carousel-dots {
         display: none;
       }
+
+      .carousel-dots {
+        display: none;
+      }
     }
 
     /* ───── Footer Styles ───── */
@@ -1549,7 +1557,7 @@
         /* ========= 1. shared countdown ========= */
         const heroTime   = document.getElementById('time');        // hero timer display
         const stickyTime = document.getElementById('sticky-time'); // sticky bar timer
-        let   remaining  = 180;                                    // seconds (3 min)
+        let   remaining  = 10;                                    // seconds (3 min)
         let   countdownInterval = null;
     
         function updateDisplays() {
